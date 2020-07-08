@@ -11,9 +11,7 @@ const myMiddleware = (req, res, next) => {
     next()
 }
 
-app.use(myMiddleware)
-
-app.get('/', (req, res, next) => {
+app.get('/', myMiddleware, (req, res, next) => {
     res.send('Hello from Node Server')
 })
 
