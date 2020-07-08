@@ -13,12 +13,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const myMiddleware = (req, res, next) => {
-    console.log('Hey Wassup');
-    next()
-}
+app.use('/api/v1/product');
 
-app.get('/', myMiddleware, (req, res, next) => {
+app.get('/', (req, res, next) => {
     res.send('Hello from Node Server')
 })
 
