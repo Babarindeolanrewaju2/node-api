@@ -13,7 +13,7 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use('/api/v1/product');
+app.use('/api/v1/product', require('./routes/productRoutes'));
 
 app.get('/', (req, res, next) => {
     res.send('Hello from Node Server')
@@ -33,4 +33,4 @@ app.use((err, req, res, next) => {
         body: {}
     })
     next()
-})
+})  
