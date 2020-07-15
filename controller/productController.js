@@ -5,7 +5,7 @@ module.exports.createProduct = async (req, res) => {
   let response = { ...constants.defaultServerResponse };
   try {
     const responseFromService = await productService.createProduct(req.body);
-    response.status = 200;
+    response.status = 201;
     response.message = constants.productMessage.PRODUCT_CREATED;
     response.body = responseFromService;
   } catch (error) {
