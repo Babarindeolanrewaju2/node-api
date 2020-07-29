@@ -19,7 +19,7 @@ const myMiddleware = (req, res, next) => {
 }
 
 app.get('/', myMiddleware, (req, res, next) => {
-    res.send('Hello from Node Server')
+    res.(201).json('Hello from Node Server')
 })
 
 const PORT = process.env.PORT || 3020;
